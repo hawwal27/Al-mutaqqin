@@ -1,5 +1,5 @@
-// components/Testimonials.jsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaQuoteLeft, FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const testimonials = [
   {
@@ -26,34 +26,91 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-advance
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleUp = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
+
+  const handleDown = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
   return (
-    <section id="testimonials" className="bg-gray-50 py-24 px-6 lg:px-16">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-green-800 mb-16">
+    <section className="bg-gray-50 py-20 px-6 lg:px-16">
+      <div className="max-w-4xl mx-auto text-center relative">
+        <h2 className="text-4xl font-extrabold text-green-800 mb-12">
           Voices of Our Community
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
-          {testimonials.map((t, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition duration-300 border border-green-100"
-            >
-              <div className="flex items-center mb-6">
-                <img
-                  src={t.image}
-                  alt={t.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-green-600 mr-4"
-                />
-                <div>
-                  <h3 className="text-lg font-semibold text-green-700">{t.name}</h3>
-                  <p className="text-sm text-gray-500">{t.role}</p>
+        {/* Up Arrow */}
+        <button
+          onClick={handleUp}
+          className="absolute left-1/2 transform -translate-x-1/2 -top-6 bg-white border border-green-300 p-2 rounded-full shadow hover:scale-110 transition"
+        >
+          <FaChevronUp className="text-green-700" />
+        </button>
+
+        {/* Slide container */}
+        <div className="relative h-[320px] overflow-hidden">
+          <div
+            className="flex flex-col transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateY(-${currentIndex * 320}px)` }}
+          >
+            {testimonials.map((t, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center text-center h-[320px] px-6"
+              >
+                <FaQuoteLeft className="text-4xl text-green-300 mb-4" />
+                <p className="text-lg text-gray-700 italic mb-6 max-w-xl mx-auto">
+                  “{t.quote}”
+                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-green-600"
+                  />
+                  <div className="text-left">
+                    <p className="font-semibold text-green-700">{t.name}</p>
+                    <p className="text-sm text-gray-500">{t.role}</p>
+                  </div>
                 </div>
               </div>
-              <p className="text-gray-700 text-base leading-relaxed italic">
-                “{t.quote}”
-              </p>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Down Arrow */}
+        <button
+          onClick={handleDown}
+          className="absolute left-1/2 transform -translate-x-1/2 -bottom-6 bg-white border border-green-300 p-2 rounded-full shadow hover:scale-110 transition"
+        >
+          <FaChevronDown className="text-green-700" />
+        </button>
+
+        {/* Dots */}
+        <div className="mt-12 flex justify-center gap-2">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                i === currentIndex ? 'bg-green-700 scale-110' : 'bg-green-300'
+              }`}
+            ></button>
           ))}
         </div>
       </div>
