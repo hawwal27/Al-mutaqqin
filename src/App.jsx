@@ -1,15 +1,15 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './Components/Home'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home"
+import ApplyNow from "./Pages/Applynow"
 
-const App = () => {
+export default function App() {
   return (
-    <div>
-       <div>
-      <Home/>
-          </div>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/Hero" element={<Home/>} />
+        <Route path="/Applynow" element={<ApplyNow/>} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App

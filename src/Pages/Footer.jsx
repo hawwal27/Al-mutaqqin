@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* School Info */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">All-Mutaqqin School</h3>
+          <h3 className="text-xl font-semibold mb-4">Darul-muttaqqin</h3>
           <p className="text-sm text-gray-300">
             A center of excellence nurturing the next generation of confident, knowledgeable, and God-conscious leaders.
           </p>

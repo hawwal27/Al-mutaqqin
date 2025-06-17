@@ -6,7 +6,7 @@ const testimonials = [
     name: 'Aisha Mohammed',
     role: 'Parent of Grade 6 Student',
     quote:
-      'All-Mutaqqin has transformed my child’s education. The teachers are truly dedicated, and the Islamic values are instilled beautifully.',
+      'Darul-muttaqqin has transformed my child’s education. The teachers are truly dedicated, and the Islamic values are instilled beautifully.',
     image: '/people/aisha.jpg',
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
     name: 'Fatima Sulaiman',
     role: 'Alumni',
     quote:
-      'Studying at All-Mutaqqin gave me strong foundations in both deen and dunya. I’m proud to be a graduate of this amazing school!',
+      'Studying at Darul-muttaqqin gave me strong foundations in both deen and dunya. I’m proud to be a graduate of this amazing school!',
     image: '/people/fatima.jpg',
   },
 ];
@@ -32,7 +32,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, []);
@@ -55,12 +55,7 @@ const Testimonials = () => {
         </h2>
 
         {/* Up Arrow */}
-        <button
-          onClick={handleUp}
-          className="absolute left-1/2 transform -translate-x-1/2 -top-6 bg-white border border-green-300 p-2 rounded-full shadow hover:scale-110 transition"
-        >
-          <FaChevronUp className="text-green-700" />
-        </button>
+       
 
         {/* Slide container */}
         <div className="relative h-[320px] overflow-hidden">
@@ -73,7 +68,7 @@ const Testimonials = () => {
                 key={index}
                 className="flex flex-col items-center justify-center text-center h-[320px] px-6"
               >
-                <FaQuoteLeft className="text-4xl text-green-300 mb-4" />
+              
                 <p className="text-lg text-gray-700 italic mb-6 max-w-xl mx-auto">
                   “{t.quote}”
                 </p>
@@ -93,13 +88,6 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Down Arrow */}
-        <button
-          onClick={handleDown}
-          className="absolute left-1/2 transform -translate-x-1/2 -bottom-6 bg-white border border-green-300 p-2 rounded-full shadow hover:scale-110 transition"
-        >
-          <FaChevronDown className="text-green-700" />
-        </button>
 
         {/* Dots */}
         <div className="mt-12 flex justify-center gap-2">
