@@ -81,7 +81,7 @@ const HeroSection = () => {
               Apply Now
             </Link>
             <Link
-              to="/AboutUs"
+              to="/Learnmore"
               className="border border-green-600 text-green-600 px-6 py-3 rounded-xl hover:bg-green-50 transition text-center"
             >
               Learn More

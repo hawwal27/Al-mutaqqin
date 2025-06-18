@@ -16,17 +16,17 @@ const ApplyNow = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
+    <div className=" bg-gradient-to-r from-green-50 to-white max-w-4xl mx-auto p-6">
   {/* Breadcrumb */}
   <div className="mb-4">
-    <Link to="/Hero" className="text-blue-600 hover:underline flex items-center space-x-1">
+    <Link to="/" className="text-green  -600 hover:underline flex items-center space-x-1">
       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
       </svg>
       <span>Back to Home</span>
     </Link>
   </div>
-      <h1 className="text-3xl font-bold mb-6 text-center">Muslim School Application Form</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-green-600">Darul-muttaqqin Application Form</h1>
       <form onSubmit={handleSubmit} className="space-y-8">
 
         {/* Student Information */}
@@ -94,7 +94,7 @@ const ApplyNow = () => {
           </div>
         </div>
 
-        <button type="submit" className="w-full bg-blue-600 text-white text-lg py-3 rounded-xl hover:bg-blue-700">Submit</button>
+        <button type="submit" className="w-full bg-green-600 text-white text-lg py-3 rounded-xl hover:bg-green-700">Submit</button>
       </form>
     </div>
   );

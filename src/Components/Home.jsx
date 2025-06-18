@@ -6,6 +6,7 @@ import Testimonials from '../Pages/Testimonial'
 import ContactUs from '../Pages/Contactus'
 import Footer from '../Pages/Footer'
 import FAQ from '../Pages/Faq'
+import Admission from '../Pages/Admission'
 
 const Home = () => {
   return (
@@ -35,7 +36,9 @@ const Home = () => {
         <FAQ/>
       </div>
 
-
+      <div id="Admission">
+      <Admission/>
+      </div>
 
       <div id='footer'>
         <Footer />

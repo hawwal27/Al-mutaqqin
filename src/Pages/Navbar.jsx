@@ -41,7 +41,7 @@ const Navbar = () => {
               )}
             </div>
 
-            <Link to="admissions" smooth={true} duration={500} className={linkClass}>Admissions</Link>
+            <Link to="Admission" smooth={true} duration={500} className={linkClass}>Admissions</Link>
             <Link to="faq" smooth={true} duration={500} className={linkClass}>Faq</Link>
           </div>
 
@@ -60,7 +60,7 @@ const Navbar = () => {
           <Link to="curriculum" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Curriculum</Link>
           <Link to="staff" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Our Staff</Link>
           <Link to="calendar" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Academic Calendar</Link>
-          <Link to="admissions" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Admissions</Link>
+          <Link to="Admission" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Admissions</Link>
           <Link to="contact" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Contact</Link>
           <Link to="faq" smooth={true} duration={500} onClick={() => setMobileOpen(false)} className="block py-2 text-gray-700 hover:text-green-600 cursor-pointer">Faq</Link>
         </div>
