@@ -35,10 +35,10 @@ const Home = () => {
       <div id="faq">
         <FAQ/>
       </div>
-
+{/* 
       <div id="Admission">
       <Admission/>
-      </div>
+      </div> */}
 
       <div id='footer'>
         <Footer />

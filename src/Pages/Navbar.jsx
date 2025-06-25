@@ -37,11 +37,11 @@ const Navbar = () => {
                   <Link to="curriculum" smooth={true} duration={500} className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Curriculum</Link>
                   <Link to="staff" smooth={true} duration={500} className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Our Staff</Link>
                   <Link to="calendar" smooth={true} duration={500} className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Academic Calendar</Link>
+                  <Link to="Admission" smooth={true} duration={500} className="block px-4 py-2 hover:bg-gray-100 cursor-pointer">Admissions</Link>
                 </div>
               )}
             </div>
 
-            <Link to="Admission" smooth={true} duration={500} className={linkClass}>Admissions</Link>
             <Link to="faq" smooth={true} duration={500} className={linkClass}>Faq</Link>
           </div>
 
